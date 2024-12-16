@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Today from "../component/Today";
+import Standing from "../pages/Standing";
+import Stats from "../pages/Stats";
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <>
+            <nav>
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="img/epl_logo.png" alt="logo" />
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li class="link">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Teams</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Players</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Standings</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Stats</a>
+                    </li>
+                </ul>
+                <button class="btn">Login</button>
+            </nav>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+            <header className="container">
+                <div className="content">
+                    <span className="blur"></span>
+                    <span className="blur"></span>
+                    <h4>" WHERE PASSION MEETS THE PREMIER LEAGUE "</h4>
+                    <h1>
+                        Welcome to My <span className="fill">EPL</span>{" "}
+                        Information Website
+                    </h1>
+                    <p>
+                        CREATED BY : <span>HYUNG SEOP LEE</span>
+                    </p>
+                    <Today />
+                    <button className="btn">My Profile</button>
+                </div>
+                <div className="image">
+                    <img src="img/first.webp" alt="epl" />
+                </div>
+            </header>
+            <section className="container">
+                <Standing />
+                <Stats />
+            </section>
+        </>
+    );
 }
 
-export default App
+export default App;
