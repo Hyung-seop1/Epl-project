@@ -9,8 +9,7 @@ function App() {
         <>
             <Navbar/>
             <div className="container">
-            <span className="blur"></span>
-            <span className="blur"></span>
+            
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/standings" element={<Standing/>}/>

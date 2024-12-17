@@ -132,26 +132,15 @@ body {
     position: relative;
 }
 
-section {
+ .standings,
+ .stats {
+    flex-basis: 45%;
     display: flex;
     justify-content: center;
     gap: 4rem;
 }
 
-section .standings,
-section .stats {
-    flex-basis: 45%;
-}
-
-section .header {
-    color: #fff;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: 600;
-}
-
-section .features {
+.standings .features {
     width: 100%;
     padding: 8px;
     border-collapse: collapse;
@@ -161,6 +150,7 @@ section .features {
 td {
     text-align: center;
     width: auto;
+    height: auto;
 }
 
 .features thead {

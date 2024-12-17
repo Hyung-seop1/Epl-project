@@ -5,6 +5,8 @@ export default function Home() {
         <>
             <div className="home">
                 <div className="content">
+                <span className="blur"></span>
+                <span className="blur"></span>
                     <h4>" WHERE PASSION MEETS THE PREMIER LEAGUE "</h4>
                     <h1>
                         Welcome to My <span className="fill">EPL</span>{" "}

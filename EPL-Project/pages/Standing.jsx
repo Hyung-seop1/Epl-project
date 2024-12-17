@@ -15,6 +15,8 @@ function Standing() {
             teamName[team.id] = team.name;
             teamPoints[team.id] = 0;
             teamLogo[team.id] = team.short_name;
+            teamWin[team.id] = 0;
+            teamLoose[team.id] = 0;
         });
 
         fixtureData.forEach((fixture) => {
@@ -43,17 +45,23 @@ function Standing() {
 
         // Sorting the array by points in descending order
         updatedTeamsArray.sort((a, b) => b.points - a.points);
-        setTeamsArray(updatedTeamsArray.slice(0, 10)); // Update state with the sorted array
+        setTeamsArray(updatedTeamsArray); // Update state with the sorted array
     }, []);
 
     return (
         <div className="standings">
-            <h2 className="header">Standings</h2>
             <table className="features">
                 <thead>
                     <tr className="table-head">
                         <th>Pos</th>
                         <th>Club</th>
+                        <th>Mp</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>Gf</th>
+                        <th>Ga</th>
+                        <th>Gd</th>
                         <th>Pts</th>
                     </tr>
                 </thead>
