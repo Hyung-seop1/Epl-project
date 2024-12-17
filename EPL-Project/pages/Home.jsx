@@ -3,8 +3,7 @@ import Today from "../component/Today";
 export default function Home() {
     return (
         <>
-<h2>this is home</h2>
-        <div className="home">
+            <div className="home">
                 <div className="content">
                     <h4>" WHERE PASSION MEETS THE PREMIER LEAGUE "</h4>
                     <h1>
@@ -18,10 +17,9 @@ export default function Home() {
                     <button className="btn">My Profile</button>
                 </div>
                 <div className="image">
-                    <img src="img/first.webp" alt="epl" />
+                    <img src="img/homeImg.webp" alt="epl" />
                 </div>
             </div>
         </>
-        
     )
 }

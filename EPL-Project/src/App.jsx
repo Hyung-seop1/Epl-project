@@ -1,4 +1,3 @@
-import "./App.css";
 import Standing from "../pages/Standing";
 import Stats from "../pages/Stats";
 import {Route, Routes} from "react-router-dom"
@@ -14,8 +13,8 @@ function App() {
             <span className="blur"></span>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/Standing" element={<Standing/>}/>
-                    <Route path="/Stats" element={<Stats/>}/>
+                    <Route path="/standings" element={<Standing/>}/>
+                    <Route path="/stats" element={<Stats/>}/>
                 </Routes>
             </div>
         </>
