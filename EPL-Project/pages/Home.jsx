@@ -1,12 +1,11 @@
-import "../src/App.css";
 import Today from "../component/Today";
 
 export default function Home() {
     return (
-        <header>
+        <>
+<h2>this is home</h2>
+        <div className="home">
                 <div className="content">
-                    <span className="blur"></span>
-                    <span className="blur"></span>
                     <h4>" WHERE PASSION MEETS THE PREMIER LEAGUE "</h4>
                     <h1>
                         Welcome to My <span className="fill">EPL</span>{" "}
@@ -21,6 +20,8 @@ export default function Home() {
                 <div className="image">
                     <img src="img/first.webp" alt="epl" />
                 </div>
-            </header>
+            </div>
+        </>
+        
     )
 }

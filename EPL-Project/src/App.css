@@ -26,7 +26,7 @@ body {
     justify-content: center;
 }
 
-nav {
+.navBar {
     max-width: 1200px;
     margin: auto;
     padding: 2rem;
@@ -93,7 +93,7 @@ nav {
     z-index: 1;
 }
 
-header {
+.home {
     position: relative;
     padding-top: 2rem;
     display: grid;
@@ -101,14 +101,14 @@ header {
     align-items: center;
 }
 
-header .content h4 {
+.home .content h4 {
     margin-bottom: 1rem;
     color: #ccc;
     font-size: 1rem;
     font-weight: 600;
 }
 
-header .content h1 {
+.home .content h1 {
     color: #fff;
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -116,19 +116,19 @@ header .content h1 {
     line-height: 4rem;
 }
 
-header .content h1 .fill {
+.home .content h1 .fill {
     color: #1d4ed8;
     -webkit-text-stroke: 1px #fff;
     font-size: 4rem;
 }
 
-header .content p {
+.home .content p {
     margin-bottom: 2rem;
     color: #ccc;
     font-weight: 500;
 }
 
-header .image {
+.home .image {
     position: relative;
 }
 

@@ -1,31 +1,31 @@
-import "../src/App.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
-        <nav>
+        <div className="navBar">
                 <div class="nav-logo">
-                    <a href="index.html">
+                    <Link to="index.html">
                         <img src="img/epl_logo.png" alt="logo" />
-                    </a>
+                    </Link>
                 </div>
                 <ul class="nav-links">
                     <li class="link">
-                        <a href="index.html">Home</a>
+                        <Link to="index.html">Home</Link>
                     </li>
                     <li class="link">
-                        <a href="#">Teams</a>
+                        <Link to="#">Teams</Link>
                     </li>
                     <li class="link">
-                        <a href="#">Players</a>
+                        <Link to="#">Players</Link>
                     </li>
                     <li class="link">
-                        <a href="#">Standings</a>
+                        <Link to="#">Standings</Link>
                     </li>
                     <li class="link">
-                        <a href="#">Stats</a>
+                        <Link to="#">Stats</Link>
                     </li>
                 </ul>
                 <button class="btn">Login</button>
-            </nav>
+            </div>
     )
 }
