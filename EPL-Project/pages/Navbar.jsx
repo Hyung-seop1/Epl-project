@@ -3,29 +3,29 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
     return (
         <nav className="navBar">
-                <div class="nav-logo">
+                <div className="nav-logo">
                     <Link to="/">
                         <img src="img/epl_logo.png" alt="logo" />
                     </Link>
                 </div>
-                <ul class="nav-links">
-                    <li class="link">
+                <ul className="nav-links">
+                    <li className="link">
                         <Link to="/">Home</Link>
                     </li>
-                    <li class="link">
+                    <li className="link">
                         <Link to="#">Teams</Link>
                     </li>
-                    <li class="link">
+                    <li className="link">
                         <Link to="#">Players</Link>
                     </li>
-                    <li class="link">
+                    <li className="link">
                         <Link to="/standings">Standings</Link>
                     </li>
-                    <li class="link">
+                    <li className="link">
                         <Link to="/stats">Stats</Link>
                     </li>
                 </ul>
-                <button class="btn">Login</button>
+                <button className="btn">Login</button>
             </nav>
     )
 }
