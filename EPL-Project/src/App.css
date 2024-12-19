@@ -205,3 +205,55 @@ body {
 .champs.last-three {
   background-color: red;
 }
+
+.standings .champsInfo {
+  padding: 3%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #b0b0b059;
+  color: #ccc;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: auto;
+  font-size: smaller;
+}
+
+.standings .champsInfo li {
+  margin-top: 4px;
+}
+
+.standings .champsInfo .champions {
+  border: solid;
+  border-color: blue;
+  background-color: blue;
+  width: 12px;
+  height: 12px;
+  border-width: 2px;
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.standings .champsInfo .europa {
+  border: solid;
+  border-color: orange;
+  background-color: orange;
+  width: 12px;
+  height: 12px;
+  border-width: 2px;
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.standings .champsInfo .relegation {
+  border: solid;
+  border-color: red;
+  background-color: red;
+  width: 12px;
+  height: 12px;
+  border-width: 2px;
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 10px;
+}

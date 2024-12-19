@@ -117,11 +117,12 @@ function Standing() {
             <th>Pts</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table-body">
           {teamsArray.map((team, index) => (
             <tr key={team.id}>
               <td style={{ position: "relative" }}>
                 <div
+                  // Checks for the position and changes color
                   className={`champs ${
                     index + 1 <= 3
                       ? "top-three"
@@ -156,6 +157,22 @@ function Standing() {
           ))}
         </tbody>
       </table>
+      <div className="champsInfo">
+        <ul>
+          <p>
+            <b>Qualification/Relegation</b>
+          </p>
+          <li>
+            <div className="champions"></div>UEFA champions League group stage
+          </li>
+          <li>
+            <div className="europa"></div>Europa League group stage
+          </li>
+          <li>
+            <div className="relegation"></div>Relegation
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
