@@ -10,6 +10,9 @@ function Standing() {
     let teamName = {};
     let teamLogo = {};
     let matchPts = {};
+    let win = {};
+    let loose = {};
+    let draw = {};
 
     informationData.teams.forEach((team) => {
       // initializing both id and name
@@ -17,6 +20,9 @@ function Standing() {
       teamPoints[team.id] = 0;
       teamLogo[team.id] = team.short_name;
       matchPts[team.id] = 0;
+      win[team.id] = 0;
+      loose[team.id] = 0;
+      draw[team.id] = 0;
     });
 
     fixtureData.forEach((fixture) => {
@@ -25,11 +31,17 @@ function Standing() {
         // Check for total points of each team
         if (fixture.team_a_score > fixture.team_h_score) {
           teamPoints[fixture.team_a] += 3;
+          win[fixture.team_a] += 1;
+          loose[fixture.team_h] += 1;
         } else if (fixture.team_a_score < fixture.team_h_score) {
           teamPoints[fixture.team_h] += 3;
+          win[fixture.team_h] += 1;
+          loose[fixture.team_a] += 1;
         } else {
           teamPoints[fixture.team_a] += 1;
           teamPoints[fixture.team_h] += 1;
+          draw[fixture.team_a] += 1;
+          draw[fixture.team_h] += 1;
         }
 
         // Increment each team match potints
@@ -46,6 +58,9 @@ function Standing() {
         points,
         logo: teamLogo[id],
         matchesPlayed: matchPts[id],
+        matchWin: win[id],
+        matchLoose: loose[id],
+        matchDraw: draw[id],
       })
     );
 
@@ -95,9 +110,9 @@ function Standing() {
                 </div>
               </td>
               <td>{team.matchesPlayed}</td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{team.matchWin}</td>
+              <td>{team.matchDraw}</td>
+              <td>{team.matchLoose}</td>
               <td></td>
               <td></td>
               <td></td>
