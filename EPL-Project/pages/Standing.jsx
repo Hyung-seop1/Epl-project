@@ -9,17 +9,20 @@ function Standing() {
     let teamPoints = {};
     let teamName = {};
     let teamLogo = {};
+    let matchPts = {};
 
     informationData.teams.forEach((team) => {
       // initializing both id and name
       teamName[team.id] = team.name;
       teamPoints[team.id] = 0;
       teamLogo[team.id] = team.short_name;
+      matchPts[team.id] = 0;
     });
 
     fixtureData.forEach((fixture) => {
       // If game is finished
       if (fixture.finished) {
+        // Check for total points of each team
         if (fixture.team_a_score > fixture.team_h_score) {
           teamPoints[fixture.team_a] += 3;
         } else if (fixture.team_a_score < fixture.team_h_score) {
@@ -28,6 +31,10 @@ function Standing() {
           teamPoints[fixture.team_a] += 1;
           teamPoints[fixture.team_h] += 1;
         }
+
+        // Increment each team match potints
+        matchPts[fixture.team_a] += 1;
+        matchPts[fixture.team_h] += 1;
       }
     });
 
@@ -38,6 +45,7 @@ function Standing() {
         name: teamName[id],
         points,
         logo: teamLogo[id],
+        matchesPlayed: matchPts[id],
       })
     );
 
@@ -86,7 +94,7 @@ function Standing() {
                   <span>{team.name}</span>
                 </div>
               </td>
-              <td></td>
+              <td>{team.matchesPlayed}</td>
               <td></td>
               <td></td>
               <td></td>
