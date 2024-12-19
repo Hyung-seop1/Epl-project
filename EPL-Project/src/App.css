@@ -184,3 +184,24 @@ body {
   height: auto;
   margin-right: 15px;
 }
+
+.champs {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 100%;
+}
+
+.champs.top-three {
+  background-color: blue;
+}
+
+.champs.fourth {
+  background-color: orange;
+}
+
+.champs.last-three {
+  background-color: red;
+}

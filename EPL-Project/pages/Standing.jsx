@@ -120,7 +120,20 @@ function Standing() {
         <tbody>
           {teamsArray.map((team, index) => (
             <tr key={team.id}>
-              <td>{index + 1}</td>
+              <td style={{ position: "relative" }}>
+                <div
+                  className={`champs ${
+                    index + 1 <= 3
+                      ? "top-three"
+                      : index + 1 === 4
+                      ? "fourth"
+                      : index + 1 >= 18
+                      ? "last-three"
+                      : ""
+                  }`}
+                ></div>
+                {index + 1}
+              </td>
               <td>
                 <div className="club">
                   <img
