@@ -13,6 +13,9 @@ function Standing() {
     let win = {};
     let loose = {};
     let draw = {};
+    let goalFor = {};
+    let goalAgainst = {};
+    let goalDifference = {};
 
     informationData.teams.forEach((team) => {
       // initializing both id and name
@@ -23,12 +26,14 @@ function Standing() {
       win[team.id] = 0;
       loose[team.id] = 0;
       draw[team.id] = 0;
+      goalFor[team.id] = 0;
+      goalAgainst[team.id] = 0;
     });
 
     fixtureData.forEach((fixture) => {
       // If game is finished
       if (fixture.finished) {
-        // Check for total points of each team
+        // Check for total points of each team, win, loose
         if (fixture.team_a_score > fixture.team_h_score) {
           teamPoints[fixture.team_a] += 3;
           win[fixture.team_a] += 1;
@@ -47,6 +52,13 @@ function Standing() {
         // Increment each team match potints
         matchPts[fixture.team_a] += 1;
         matchPts[fixture.team_h] += 1;
+
+        // Caulating total goals for each team
+        goalFor[fixture.team_a] += fixture.team_a_score;
+        goalAgainst[fixture.team_a] += fixture.team_h_score;
+
+        goalFor[fixture.team_h] += fixture.team_h_score;
+        goalAgainst[fixture.team_h] += fixture.team_a_score;
       }
     });
 
@@ -61,12 +73,22 @@ function Standing() {
         matchWin: win[id],
         matchLoose: loose[id],
         matchDraw: draw[id],
+        gf: goalFor[id],
+        ga: goalAgainst[id],
       })
     );
 
     // Sorting the array by points in descending order
-    updatedTeamsArray.sort((a, b) => b.points - a.points);
-    setTeamsArray(updatedTeamsArray); // Update state with the sorted array
+    updatedTeamsArray.sort((a, b) => {
+      // Check for GD between teams that has same points
+      if (b.points == a.points) {
+        return b.gf - b.ga - (a.gf - a.ga);
+      } else {
+        return b.points - a.points;
+      }
+    });
+    // Update state with the sorted array
+    setTeamsArray(updatedTeamsArray);
   }, []);
 
   return (
@@ -113,9 +135,9 @@ function Standing() {
               <td>{team.matchWin}</td>
               <td>{team.matchDraw}</td>
               <td>{team.matchLoose}</td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{team.gf}</td>
+              <td>{team.ga}</td>
+              <td>{team.gf - team.ga}</td>
               <td>{team.points}</td>
             </tr>
           ))}
