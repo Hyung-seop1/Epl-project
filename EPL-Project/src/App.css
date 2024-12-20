@@ -195,7 +195,7 @@ body {
 }
 
 .champs.top-three {
-  background-color: blue;
+  background-color: #1d4ed8;
 }
 
 .champs.fourth {
@@ -210,12 +210,13 @@ body {
   padding: 3%;
   margin-top: 30px;
   margin-bottom: 30px;
-  background-color: #b0b0b059;
+  background-color: #b0b0b04d;
   color: #ccc;
   margin-left: 10%;
   margin-right: 10%;
   width: auto;
   font-size: smaller;
+  border-radius: 2px;
 }
 
 .standings .champsInfo li {
@@ -224,8 +225,8 @@ body {
 
 .standings .champsInfo .champions {
   border: solid;
-  border-color: blue;
-  background-color: blue;
+  border-color: #1d4ed8;
+  background-color: #1d4ed8;
   width: 12px;
   height: 12px;
   border-width: 2px;
