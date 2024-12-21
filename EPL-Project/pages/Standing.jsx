@@ -15,7 +15,6 @@ function Standing() {
         let draw = {};
         let goalFor = {};
         let goalAgainst = {};
-        let goalDifference = {};
 
         informationData.teams.forEach((team) => {
             // initializing both id and name
