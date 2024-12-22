@@ -10,6 +10,7 @@ function Stats() {
         let teamName = {};
         let teamLogo = {};
         let playerName = {};
+        let assists = 0;
 
         informationData.teams.forEach((team) => {
             teamName[team.id] = team.name;
@@ -18,6 +19,7 @@ function Stats() {
 
         informationData.elements.forEach((element) => {
             goals[element.id] = 0;
+            assists[element.id] = 0;
             playerName[
                 element.id
             ] = `${element.first_name} ${element.second_name}`;
@@ -26,14 +28,17 @@ function Stats() {
         fixtureData.forEach((fixture) => {
             // If game is finished
             if (fixture.finished) {
-                const goalSataus = fixture.stats.find(
+                const goalStatus = fixture.stats.find(
                     (stat) => stat.identifier === "goals_scored"
                 );
-                if (goalSataus) {
-                    goalSataus.h.forEach((goal) => {
+                const assistStatus = fixture.stats.find(
+                    (stat) => stat.identifier === "assists"
+                );
+                if (goalStatus) {
+                    goalStatus.h.forEach((goal) => {
                         goals[goal.element] += 1;
                     });
-                    goalSataus.a.forEach((goal) => {
+                    goalStatus.a.forEach((goal) => {
                         goals[goal.element] += 1;
                     });
                 }
@@ -57,18 +62,53 @@ function Stats() {
 
     return (
         <div className="stats">
-            <h2 className="header">Stats</h2>
+            <h2 className="header">Goals</h2>
             <table className="features">
                 <thead>
                     <tr className="table-head">
+                        <th></th>
                         <th>Club</th>
                         <th>Player</th>
                         <th>Goals</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {playersArray.map((team) => (
+                    {playersArray.map((team, index) => (
                         <tr key={team.id}>
+                            <td>{index + 1}</td>
+                            <td>
+                                <div className="club">
+                                    <img
+                                        className="club-logo"
+                                        src={`img/logo/${team.logo}.png`}
+                                        alt={team.name}
+                                    ></img>
+                                    <span>{team.name}</span>
+                                </div>
+                            </td>
+                            <td>{team.player}</td>
+                            <td>{team.goal}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <h2 className="header">
+                <br />
+                Assists
+            </h2>
+            <table className="features">
+                <thead>
+                    <tr className="table-head">
+                        <th></th>
+                        <th>Club</th>
+                        <th>Player</th>
+                        <th>Assists</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {playersArray.map((team, index) => (
+                        <tr key={team.id}>
+                            <td>{index + 1}</td>
                             <td>
                                 <div className="club">
                                     <img
