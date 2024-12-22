@@ -64,7 +64,18 @@ body {
 }
 
 .link a:hover::after {
+    width: 80%;
+}
+
+.link .current::after {
+    content: "";
+    position: absolute;
+    height: 2px;
     width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #1d4ed8;
+    transition: all 0.3s ease;
 }
 
 .btn {

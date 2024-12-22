@@ -82,7 +82,6 @@ function Stats() {
             <table className="features">
                 <thead>
                     <tr className="table-head">
-                        <th></th>
                         <th>Club</th>
                         <th>Player</th>
                         <th>Goals</th>
@@ -91,7 +90,6 @@ function Stats() {
                 <tbody>
                     {playersArray.map((team, index) => (
                         <tr key={team.id}>
-                            <td>{index + 1}</td>
                             <td>
                                 <div className="club">
                                     <img
@@ -115,7 +113,6 @@ function Stats() {
             <table className="features">
                 <thead>
                     <tr className="table-head">
-                        <th></th>
                         <th>Club</th>
                         <th>Player</th>
                         <th>Assists</th>
@@ -124,7 +121,6 @@ function Stats() {
                 <tbody>
                     {assistArray.map((team, index) => (
                         <tr key={team.id}>
-                            <td>{index + 1}</td>
                             <td>
                                 <div className="club">
                                     <img
