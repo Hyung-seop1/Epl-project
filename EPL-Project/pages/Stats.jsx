@@ -4,13 +4,14 @@ import informationData from "../data/information.json";
 
 function Stats() {
     const [playersArray, setPlayersArray] = useState([]);
+    const [assistArray, setAssistArray] = useState([]);
 
     useEffect(() => {
         let goals = {};
         let teamName = {};
         let teamLogo = {};
         let playerName = {};
-        let assists = 0;
+        let assists = {};
 
         informationData.teams.forEach((team) => {
             teamName[team.id] = team.name;
@@ -42,12 +43,22 @@ function Stats() {
                         goals[goal.element] += 1;
                     });
                 }
+
+                if (assistStatus) {
+                    assistStatus.h.forEach((assist) => {
+                        assists[assist.element] += 1;
+                    });
+                    assistStatus.a.forEach((assist) => {
+                        assists[assist.element] += 1;
+                    });
+                }
             }
         });
 
         const updatedPlayersArray = informationData.elements.map((element) => ({
             id: element.id,
             goal: goals[element.id],
+            assist: assists[element.id],
             name: teamName[element.team],
             logo: teamLogo[element.team],
             player: playerName[element.id],
@@ -57,7 +68,12 @@ function Stats() {
             .sort((a, b) => b.goal - a.goal)
             .slice(0, 5);
 
+        const topAssist = updatedPlayersArray
+            .sort((a, b) => b.assist - a.assist)
+            .slice(0, 5);
+
         setPlayersArray(topPlayers);
+        setAssistArray(topAssist);
     }, []);
 
     return (
@@ -106,7 +122,7 @@ function Stats() {
                     </tr>
                 </thead>
                 <tbody>
-                    {playersArray.map((team, index) => (
+                    {assistArray.map((team, index) => (
                         <tr key={team.id}>
                             <td>{index + 1}</td>
                             <td>
@@ -120,7 +136,7 @@ function Stats() {
                                 </div>
                             </td>
                             <td>{team.player}</td>
-                            <td>{team.goal}</td>
+                            <td>{team.assist}</td>
                         </tr>
                     ))}
                 </tbody>
