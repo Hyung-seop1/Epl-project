@@ -5,6 +5,8 @@ import informationData from "../data/information.json";
 function Stats() {
     const [playersArray, setPlayersArray] = useState([]);
     const [assistArray, setAssistArray] = useState([]);
+    const [yellowArray, setYellowArray] = useState([]);
+    const [redArray, setRedArray] = useState([]);
 
     useEffect(() => {
         let goals = {};
@@ -12,6 +14,8 @@ function Stats() {
         let teamLogo = {};
         let playerName = {};
         let assists = {};
+        let yellows = {};
+        let reds = {};
 
         informationData.teams.forEach((team) => {
             teamName[team.id] = team.name;
@@ -21,6 +25,8 @@ function Stats() {
         informationData.elements.forEach((element) => {
             goals[element.id] = 0;
             assists[element.id] = 0;
+            yellows[element.id] = 0;
+            reds[element.id] = 0;
             playerName[
                 element.id
             ] = `${element.first_name} ${element.second_name}`;
@@ -34,6 +40,12 @@ function Stats() {
                 );
                 const assistStatus = fixture.stats.find(
                     (stat) => stat.identifier === "assists"
+                );
+                const yellowStatus = fixture.stats.find(
+                    (stat) => stat.identifier === "yellow_cards"
+                );
+                const redStatus = fixture.stats.find(
+                    (stat) => stat.identifier === "red_cards"
                 );
                 if (goalStatus) {
                     goalStatus.h.forEach((goal) => {
@@ -52,16 +64,36 @@ function Stats() {
                         assists[assist.element] += 1;
                     });
                 }
+
+                if (yellowStatus) {
+                    yellowStatus.h.forEach((yellow) => {
+                        yellows[yellow.element] += 1;
+                    });
+                    yellowStatus.a.forEach((yellow) => {
+                        yellows[yellow.element] += 1;
+                    });
+                }
+
+                if (redStatus) {
+                    redStatus.h.forEach((red) => {
+                        reds[red.element] += 1;
+                    });
+                    redStatus.a.forEach((red) => {
+                        reds[red.element] += 1;
+                    });
+                }
             }
         });
 
         const updatedPlayersArray = informationData.elements.map((element) => ({
             id: element.id,
-            goal: goals[element.id],
-            assist: assists[element.id],
             name: teamName[element.team],
             logo: teamLogo[element.team],
             player: playerName[element.id],
+            goal: goals[element.id],
+            assist: assists[element.id],
+            yellowCard: yellows[element.id],
+            redCard: reds[element.id],
         }));
 
         const topPlayers = updatedPlayersArray
@@ -72,8 +104,18 @@ function Stats() {
             .sort((a, b) => b.assist - a.assist)
             .slice(0, 5);
 
+        const topYellow = updatedPlayersArray
+            .sort((a, b) => b.yellowCard - a.yellowCard)
+            .slice(0, 7);
+
+        const topRed = updatedPlayersArray
+            .sort((a, b) => b.redCard - a.redCard)
+            .slice(0, 5);
+
         setPlayersArray(topPlayers);
         setAssistArray(topAssist);
+        setYellowArray(topYellow);
+        setRedArray(topRed);
     }, []);
 
     return (
@@ -82,14 +124,15 @@ function Stats() {
             <table className="features">
                 <thead>
                     <tr className="table-head">
-                        <th>Club</th>
                         <th>Player</th>
+                        <th>Club</th>
                         <th>Goals</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {playersArray.map((team, index) => (
+                    {playersArray.map((team) => (
                         <tr key={team.id}>
+                            <td>{team.player}</td>
                             <td>
                                 <div className="club">
                                     <img
@@ -100,7 +143,7 @@ function Stats() {
                                     <span>{team.name}</span>
                                 </div>
                             </td>
-                            <td>{team.player}</td>
+
                             <td>{team.goal}</td>
                         </tr>
                     ))}
@@ -113,14 +156,15 @@ function Stats() {
             <table className="features">
                 <thead>
                     <tr className="table-head">
-                        <th>Club</th>
                         <th>Player</th>
+                        <th>Club</th>
                         <th>Assists</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {assistArray.map((team, index) => (
+                    {assistArray.map((team) => (
                         <tr key={team.id}>
+                            <td>{team.player}</td>
                             <td>
                                 <div className="club">
                                     <img
@@ -131,8 +175,74 @@ function Stats() {
                                     <span>{team.name}</span>
                                 </div>
                             </td>
-                            <td>{team.player}</td>
+
                             <td>{team.assist}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <h2 className="header">
+                <br />
+                Yellow cards
+                <div className="yellow"></div>
+            </h2>
+            <table className="features">
+                <thead>
+                    <tr className="table-head">
+                        <th>Player</th>
+                        <th>Club</th>
+                        <th>Yellow cards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {yellowArray.map((team) => (
+                        <tr key={team.id}>
+                            <td>{team.player}</td>
+                            <td>
+                                <div className="club">
+                                    <img
+                                        className="club-logo"
+                                        src={`img/logo/${team.logo}.png`}
+                                        alt={team.name}
+                                    ></img>
+                                    <span>{team.name}</span>
+                                </div>
+                            </td>
+
+                            <td>{team.yellowCard}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <h2 className="header">
+                <br />
+                Red Cards
+                <div className="red"></div>
+            </h2>
+            <table className="features">
+                <thead>
+                    <tr className="table-head">
+                        <th>Player</th>
+                        <th>Club</th>
+                        <th>Red Cards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {redArray.map((team) => (
+                        <tr key={team.id}>
+                            <td>{team.player}</td>
+                            <td>
+                                <div className="club">
+                                    <img
+                                        className="club-logo"
+                                        src={`img/logo/${team.logo}.png`}
+                                        alt={team.name}
+                                    ></img>
+                                    <span>{team.name}</span>
+                                </div>
+                            </td>
+
+                            <td>{team.redCard}</td>
                         </tr>
                     ))}
                 </tbody>
