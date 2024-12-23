@@ -1,8 +1,7 @@
-# React + Vite
+# My Epl
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Below APIs are the resources that used for this project
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [FIXTURE] (https://fantasy.premierleague.com/api/fixtures/) used for fixture.json
+-   [INFORMATION] (https://fantasy.premierleague.com/api/bootstrap-static/) used for information.json
+-   [API GUIDE] (https://medium.com/@frenzelts/fantasy-premier-league-api-endpoints-a-detailed-guide-acbd5598eb19)

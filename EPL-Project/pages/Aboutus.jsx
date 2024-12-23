@@ -2,7 +2,7 @@ export default function Aboutus() {
     return (
         <>
             <div className="aboutUs">
-                <div>
+                <div className="aboutme-background">
                     <img src="img/Winner.jpg.webp" alt="epl" />
                 </div>
                 <div className="introduce">
@@ -16,20 +16,32 @@ export default function Aboutus() {
                             football. My interest in the Premier League (EPL)
                             grew significantly after becoming a fan of Tottenham
                             Hotspur and following Son Heung-min's remarkable
-                            performances. This project was developed using
-                            React, and although there are areas for improvement,
-                            I am committed to continually enhancing it. Through
-                            this process, I have gained valuable experience in
-                            learning new technologies and solving problems,
-                            which has contributed to my personal and
-                            professional growth."
+                            performances. This project was developed using React
+                            and integrates data from the Fantasy Premier League
+                            API (fantasy.premierleague.com/api/bootstrap-static)
+                            to provide real-time statistics and insights.
+                            Through this process, I have gained valuable
+                            experience in learning new technologies, solving
+                            problems, and working with APIs, which has
+                            contributed to my personal and professional growth."
                         </p>
                         <div className="personalLink">
                             <h3>More Info:</h3>
                             <div className="linkofmine">
-                                <div className="aboutme-linkedin"></div>
-                                <i class="bx bxl-linkedin-square"></i>
-                                <i class="bx bxl-github"></i>
+                                <a
+                                    href="https://www.linkedin.com/in/hyungseop-lee"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i class="bx bxl-linkedin-square"></i>
+                                </a>
+                                <a
+                                    href="https://github.com/Hyung-seop1/Epl-project"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i class="bx bxl-github"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
