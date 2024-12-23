@@ -319,7 +319,6 @@ body {
     color: #fff;
     text-align: center;
 }
-/*=================================*/
 
 .aboutUs .introduce {
     background-color: #fff;
@@ -349,7 +348,7 @@ body {
 }
 
 .personalLink {
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 .linkofmine i {

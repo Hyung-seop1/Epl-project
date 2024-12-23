@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
             </div>
             <div>
-                <p className="copyright">Copyright &copy; 2024 myEPL .</p>
+                <p className="copyright">Copyright &copy; 2024 MyEPL .</p>
             </div>
         </>
     );

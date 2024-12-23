@@ -18,15 +18,15 @@ export default function Aboutus() {
                             Hotspur and following Son Heung-min's remarkable
                             performances. This project was developed using React
                             and integrates data from the Fantasy Premier League
-                            API (fantasy.premierleague.com/api/bootstrap-static)
-                            to provide real-time statistics and insights.
-                            Through this process, I have gained valuable
-                            experience in learning new technologies, solving
-                            problems, and working with APIs, which has
-                            contributed to my personal and professional growth."
+                            API (fantasy.premierleague.com/api) to provide
+                            real-time statistics and insights. Through this
+                            process, I have gained valuable experience in
+                            learning new technologies, solving problems, and
+                            working with APIs, which has contributed to my
+                            personal and professional growth."
                         </p>
                         <div className="personalLink">
-                            <h3>More Info:</h3>
+                            <h3>More Information:</h3>
                             <div className="linkofmine">
                                 <a
                                     href="https://www.linkedin.com/in/hyungseop-lee"
