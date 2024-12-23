@@ -22,8 +22,14 @@ export default function Home() {
                 </div>
             </div>
             <div className="icons">
-                <div className="profile">
-                    <i class="bx bxs-user-rectangle"></i>
+                <div className="instagram">
+                    <i class="bx bxl-instagram"></i>
+                </div>
+                <div className="facebook">
+                    <i class="bx bxl-facebook-square"></i>
+                </div>
+                <div className="twitter">
+                    <i class="bx bxl-twitter"></i>
                 </div>
                 <div
                     className="linkedIn"

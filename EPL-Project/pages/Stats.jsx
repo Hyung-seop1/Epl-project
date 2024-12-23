@@ -110,7 +110,7 @@ function Stats() {
 
         const topRed = updatedPlayersArray
             .sort((a, b) => b.redCard - a.redCard)
-            .slice(0, 5);
+            .slice(0, 7);
 
         setPlayersArray(topPlayers);
         setAssistArray(topAssist);
@@ -132,7 +132,7 @@ function Stats() {
                 <tbody>
                     {playersArray.map((team) => (
                         <tr key={team.id}>
-                            <td>{team.player}</td>
+                            <td className="yellowName">{team.player}</td>
                             <td>
                                 <div className="club">
                                     <img

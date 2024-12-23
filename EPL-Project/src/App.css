@@ -321,35 +321,3 @@ body {
     color: #18181b;
     cursor: pointer;
 }
-
-.gitHub {
-    color: #d1d5db;
-    width: 55px;
-    height: 55px;
-}
-
-.gitHub:hover {
-    color: #18181b;
-    cursor: pointer;
-    background-color: #d1d5db;
-    border-radius: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile {
-    color: #d1d5db;
-    width: 55px;
-    height: 55px;
-}
-
-.profile:hover {
-    color: #18181b;
-    cursor: pointer;
-    background-color: #d1d5db;
-    border-radius: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
