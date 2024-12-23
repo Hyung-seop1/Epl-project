@@ -57,7 +57,7 @@ export default function Navbar() {
                             isActive ? "current" : ""
                         }
                     >
-                        About Us
+                        About Me
                     </NavLink>
                 </li>
             </ul>

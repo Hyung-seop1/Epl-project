@@ -306,8 +306,51 @@ body {
     gap: 40px;
 }
 
+.instagram:hover,
+.facebook:hover,
+.twitter:hover,
+.linkedIn:hover,
+.gitHub:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
 .copyright {
     color: #fff;
     text-align: center;
 }
 /*=================================*/
+
+.aboutUs .introduce {
+    background-color: #fff;
+    border: bold #fff;
+    display: flex;
+}
+
+.me {
+    padding: 60px;
+    height: 400px;
+    width: auto;
+}
+
+.content {
+    margin-right: 20px;
+}
+.content h2 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.content p {
+    margin-top: 10px;
+}
+
+.personalLink {
+    margin-top: 15px;
+}
+
+.linkofmine i {
+    font-size: 40px;
+}
