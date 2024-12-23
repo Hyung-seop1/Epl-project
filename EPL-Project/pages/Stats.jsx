@@ -22,6 +22,7 @@ export default function Stats() {
             teamLogo[team.id] = team.short_name;
         });
 
+        // Initializing the data that need
         informationData.elements.forEach((element) => {
             goals[element.id] = 0;
             assists[element.id] = 0;
@@ -49,37 +50,37 @@ export default function Stats() {
                 );
                 if (goalStatus) {
                     goalStatus.h.forEach((goal) => {
-                        goals[goal.element] += 1;
+                        goals[goal.element] += goal.value;
                     });
                     goalStatus.a.forEach((goal) => {
-                        goals[goal.element] += 1;
+                        goals[goal.element] += goal.value;
                     });
                 }
 
                 if (assistStatus) {
                     assistStatus.h.forEach((assist) => {
-                        assists[assist.element] += 1;
+                        assists[assist.element] += assist.value;
                     });
                     assistStatus.a.forEach((assist) => {
-                        assists[assist.element] += 1;
+                        assists[assist.element] += assist.value;
                     });
                 }
 
                 if (yellowStatus) {
                     yellowStatus.h.forEach((yellow) => {
-                        yellows[yellow.element] += 1;
+                        yellows[yellow.element] += yellow.value;
                     });
                     yellowStatus.a.forEach((yellow) => {
-                        yellows[yellow.element] += 1;
+                        yellows[yellow.element] += yellow.value;
                     });
                 }
 
                 if (redStatus) {
                     redStatus.h.forEach((red) => {
-                        reds[red.element] += 1;
+                        reds[red.element] += red.value;
                     });
                     redStatus.a.forEach((red) => {
-                        reds[red.element] += 1;
+                        reds[red.element] += red.value;
                     });
                 }
             }
@@ -110,7 +111,7 @@ export default function Stats() {
 
         const topRed = updatedPlayersArray
             .sort((a, b) => b.redCard - a.redCard)
-            .slice(0, 7);
+            .slice(0, 10);
 
         setPlayersArray(topPlayers);
         setAssistArray(topAssist);
