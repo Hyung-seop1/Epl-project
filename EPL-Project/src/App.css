@@ -303,21 +303,11 @@ body {
     color: #1d4ed8;
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 40px;
 }
 
-.linkedIn {
-    margin-top: 25px;
-    background-color: #d1d5db;
-    border-radius: 15%;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.copyright {
+    color: #fff;
+    text-align: center;
 }
-
-.linkedIn:hover {
-    color: #18181b;
-    cursor: pointer;
-}
+/*=================================*/

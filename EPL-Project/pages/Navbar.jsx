@@ -29,16 +29,7 @@ export default function Navbar() {
                         Teams
                     </NavLink>
                 </li>
-                <li className="link">
-                    <NavLink
-                        to="/players"
-                        className={({ isActive }) =>
-                            isActive ? "current" : ""
-                        }
-                    >
-                        Players
-                    </NavLink>
-                </li>
+
                 <li className="link">
                     <NavLink
                         to="/standings"
@@ -57,6 +48,16 @@ export default function Navbar() {
                         }
                     >
                         Stats
+                    </NavLink>
+                </li>
+                <li className="link">
+                    <NavLink
+                        to="/aboutUs"
+                        className={({ isActive }) =>
+                            isActive ? "current" : ""
+                        }
+                    >
+                        About Us
                     </NavLink>
                 </li>
             </ul>

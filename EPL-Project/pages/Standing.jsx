@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import fixtureData from "../data/fixture.json";
 import informationData from "../data/information.json";
 
-function Standing() {
+export default function Standing() {
     const [teamsArray, setTeamsArray] = useState([]);
 
     useEffect(() => {
@@ -176,5 +176,3 @@ function Standing() {
         </div>
     );
 }
-
-export default Standing;

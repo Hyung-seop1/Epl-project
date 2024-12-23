@@ -22,13 +22,37 @@ export default function Home() {
                 </div>
             </div>
             <div className="icons">
-                <div className="instagram">
+                <div
+                    className="instagram"
+                    onClick={() =>
+                        window.open(
+                            "https://www.instagram.com/premierleague/",
+                            "_blank"
+                        )
+                    }
+                >
                     <i class="bx bxl-instagram"></i>
                 </div>
-                <div className="facebook">
+                <div
+                    className="facebook"
+                    onClick={() =>
+                        window.open(
+                            "https://www.facebook.com/premierleague/",
+                            "_blank"
+                        )
+                    }
+                >
                     <i class="bx bxl-facebook-square"></i>
                 </div>
-                <div className="twitter">
+                <div
+                    className="twitter"
+                    onClick={() =>
+                        window.open(
+                            "https://x.com/premierleague?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+                            "_blank"
+                        )
+                    }
+                >
                     <i class="bx bxl-twitter"></i>
                 </div>
                 <div
@@ -53,6 +77,9 @@ export default function Home() {
                 >
                     <i class="bx bxl-github"></i>
                 </div>
+            </div>
+            <div>
+                <p className="copyright">&copy; 2024 myEPL.com</p>
             </div>
         </>
     );

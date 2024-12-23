@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import fixtureData from "../data/fixture.json";
 import informationData from "../data/information.json";
 
-function Stats() {
+export default function Stats() {
     const [playersArray, setPlayersArray] = useState([]);
     const [assistArray, setAssistArray] = useState([]);
     const [yellowArray, setYellowArray] = useState([]);
@@ -250,4 +250,3 @@ function Stats() {
         </div>
     );
 }
-export default Stats;
