@@ -15,6 +15,7 @@ export default function Standing() {
         let draw = {};
         let goalFor = {};
         let goalAgainst = {};
+        let lastFive = {};
 
         informationData.teams.forEach((team) => {
             // initializing both id and name
@@ -27,6 +28,7 @@ export default function Standing() {
             draw[team.id] = 0;
             goalFor[team.id] = 0;
             goalAgainst[team.id] = 0;
+            lastFive[team.id] = [];
         });
 
         fixtureData.forEach((fixture) => {
@@ -37,15 +39,21 @@ export default function Standing() {
                     teamPoints[fixture.team_a] += 3;
                     win[fixture.team_a] += 1;
                     loose[fixture.team_h] += 1;
+                    lastFive[fixture.team_a].push("W");
+                    lastFive[fixture.team_h].push("L");
                 } else if (fixture.team_a_score < fixture.team_h_score) {
                     teamPoints[fixture.team_h] += 3;
                     win[fixture.team_h] += 1;
                     loose[fixture.team_a] += 1;
+                    lastFive[fixture.team_h].push("W");
+                    lastFive[fixture.team_a].push("L");
                 } else {
                     teamPoints[fixture.team_a] += 1;
                     teamPoints[fixture.team_h] += 1;
                     draw[fixture.team_a] += 1;
                     draw[fixture.team_h] += 1;
+                    lastFive[fixture.team_a].push("D");
+                    lastFive[fixture.team_h].push("D");
                 }
 
                 // Increment each team match potints
@@ -74,6 +82,7 @@ export default function Standing() {
                 matchDraw: draw[id],
                 gf: goalFor[id],
                 ga: goalAgainst[id],
+                recentEvent: lastFive[id].slice(-5),
             })
         );
 
@@ -95,7 +104,7 @@ export default function Standing() {
             <table className="features">
                 <thead className="season">
                     <tr>
-                        <th colSpan="10">
+                        <th colSpan="11">
                             Season
                             <br />
                             <span className="num">2024 - 25</span>
@@ -114,6 +123,7 @@ export default function Standing() {
                         <th>Ga</th>
                         <th>Gd</th>
                         <th>Pts</th>
+                        <th>Last 5</th>
                     </tr>
                 </thead>
                 <tbody className="table-body">
@@ -152,6 +162,7 @@ export default function Standing() {
                             <td>{team.ga}</td>
                             <td>{team.gf - team.ga}</td>
                             <td>{team.points}</td>
+                            <td>{team.recentEvent.join(", ")}</td>
                         </tr>
                     ))}
                 </tbody>
