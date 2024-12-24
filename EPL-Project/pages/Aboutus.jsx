@@ -10,7 +10,7 @@ export default function Aboutus() {
                         <img src="img/me.jpg" className="me"></img>
                     </div>
                     <div className="content">
-                        <h2>About Me</h2>
+                        <h2>About Us</h2>
                         <p>
                             "This website was created out of a deep passion for
                             football. My interest in the Premier League (EPL)
