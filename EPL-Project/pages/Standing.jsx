@@ -72,15 +72,15 @@ export default function Standing() {
         // Converting Word to Icon indicates W L D
         const convertToIcon = (results) => {
             return results.map((result, index) => (
-                <span key={index} className="last">
+                <div key={index}>
                     {result === "W" ? (
-                        <i className="bx bxs-check-circle"></i>
+                        <i className="bx bxs-check-circle icon-win"></i>
                     ) : result === "L" ? (
-                        <i className="bx bxs-x-circle"></i>
+                        <i className="bx bxs-x-circle icon-loose"></i>
                     ) : (
-                        <i className="bx bxs-minus-circle"></i>
+                        <i className="bx bxs-minus-circle icon-draw"></i>
                     )}
-                </span>
+                </div>
             ));
         };
 
@@ -177,27 +177,49 @@ export default function Standing() {
                             <td>{team.ga}</td>
                             <td>{team.gf - team.ga}</td>
                             <td>{team.points}</td>
-                            <td>{team.recentEvent}</td>
+                            <td className="last5">{team.recentEvent}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
             <div className="champsInfo">
-                <ul>
-                    <p>
-                        <b>Qualification/Relegation</b>
-                    </p>
-                    <li>
-                        <div className="champions"></div>UEFA champions League
-                        group stage
-                    </li>
-                    <li>
-                        <div className="europa"></div>Europa League group stage
-                    </li>
-                    <li>
-                        <div className="relegation"></div>Relegation
-                    </li>
-                </ul>
+                <div>
+                    <ul>
+                        <p>
+                            <b>Qualification/Relegation</b>
+                        </p>
+                        <li>
+                            <div className="champions"></div>UEFA champions
+                            League group stage
+                        </li>
+                        <li>
+                            <div className="europa"></div>Europa League group
+                            stage
+                        </li>
+                        <li>
+                            <div className="relegation"></div>Relegation
+                        </li>
+                    </ul>
+                </div>
+                <div className="indicator">
+                    <ul>
+                        <p>
+                            <b>Last 5 matches</b>
+                        </p>
+                        <li>
+                            <div className="bx bxs-check-circle icon-win"></div>
+                            Win
+                        </li>
+                        <li>
+                            <div className="bx bxs-minus-circle icon-draw"></div>
+                            Draw
+                        </li>
+                        <li>
+                            <div className="bx bxs-x-circle icon-loose"></div>
+                            Loss
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );
