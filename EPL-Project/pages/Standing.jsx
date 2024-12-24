@@ -69,6 +69,21 @@ export default function Standing() {
             }
         });
 
+        // Converting Word to Icon indicates W L D
+        const convertToIcon = (results) => {
+            return results.map((result, index) => (
+                <span key={index} className="last">
+                    {result === "W" ? (
+                        <i className="bx bxs-check-circle"></i>
+                    ) : result === "L" ? (
+                        <i className="bx bxs-x-circle"></i>
+                    ) : (
+                        <i className="bx bxs-minus-circle"></i>
+                    )}
+                </span>
+            ));
+        };
+
         // Use the state setter to update the teamsArray state
         const updatedTeamsArray = Object.entries(teamPoints).map(
             ([id, points]) => ({
@@ -82,7 +97,7 @@ export default function Standing() {
                 matchDraw: draw[id],
                 gf: goalFor[id],
                 ga: goalAgainst[id],
-                recentEvent: lastFive[id].slice(-5),
+                recentEvent: convertToIcon(lastFive[id].slice(-5)),
             })
         );
 
@@ -162,7 +177,7 @@ export default function Standing() {
                             <td>{team.ga}</td>
                             <td>{team.gf - team.ga}</td>
                             <td>{team.points}</td>
-                            <td>{team.recentEvent.join(", ")}</td>
+                            <td>{team.recentEvent}</td>
                         </tr>
                     ))}
                 </tbody>
