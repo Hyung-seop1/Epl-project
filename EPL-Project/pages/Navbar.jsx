@@ -21,12 +21,12 @@ export default function Navbar() {
                 </li>
                 <li className="link">
                     <NavLink
-                        to="/teams"
+                        to="/matches"
                         className={({ isActive }) =>
                             isActive ? "current" : ""
                         }
                     >
-                        Teams
+                        Matches
                     </NavLink>
                 </li>
 

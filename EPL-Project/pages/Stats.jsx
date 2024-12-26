@@ -209,7 +209,6 @@ export default function Stats() {
                                     <span>{team.name}</span>
                                 </div>
                             </td>
-
                             <td>{team.yellowCard}</td>
                         </tr>
                     ))}
@@ -242,7 +241,6 @@ export default function Stats() {
                                     <span>{team.name}</span>
                                 </div>
                             </td>
-
                             <td>{team.redCard}</td>
                         </tr>
                     ))}
