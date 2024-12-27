@@ -397,3 +397,15 @@ body {
 .indicator {
     margin-left: 200px;
 }
+
+.matchTable h2 {
+    display: flex;
+}
+
+.eachEvent {
+    display: flex;
+}
+
+.eachEvent .matchTime {
+    margin-left: 30px;
+}
