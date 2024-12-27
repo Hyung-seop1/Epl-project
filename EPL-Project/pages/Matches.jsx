@@ -3,15 +3,33 @@ import fixtureData from "../data/fixture.json";
 import informationData from "../data/information.json";
 
 export default function Matches() {
+    // Set as default "1" for match day
     const [currentEvent, setCurrentEvent] = useState(1);
     const totalEvents = 38;
-    const groupedData = fixtureData.reduce((acc, match) => {
-        if (!acc[match.event]) {
-            acc[match.event] = [];
-        }
-        acc[match.event].push(match);
-        return acc;
-    }, {});
+    const [teamsArray, setTeamsArray] = useState({});
+    const [groupedData, setGroupedData] = useState({});
+
+    useEffect(() => {
+        let teamName = {};
+        let teamLogo = {};
+
+        informationData.teams.forEach((team) => {
+            teamName[team.id] = team.name;
+            teamLogo[team.id] = team.short_name;
+        });
+
+        setTeamsArray({ teamName, teamLogo });
+
+        // Grouping the fixture data
+        const grouped = fixtureData.reduce((acc, match) => {
+            if (!acc[match.event]) {
+                acc[match.event] = [];
+            }
+            acc[match.event].push(match);
+            return acc;
+        }, {});
+        setGroupedData(grouped);
+    }, []);
 
     const handlePrevEvent = () => {
         if (currentEvent > 1) {
@@ -24,6 +42,7 @@ export default function Matches() {
             setCurrentEvent(currentEvent + 1);
         }
     };
+
     return (
         <>
             <div className="matchTable">
@@ -48,10 +67,36 @@ export default function Matches() {
                 {groupedData[currentEvent]?.map((match, index) => (
                     <div key={index} className="eachEvent">
                         <div className="teamInfo">
-                            Team A: {match.team_a} {match.team_a_score}
-                            <br />
-                            Team H: {match.team_h} {match.team_h_score}
-                            <br />
+                            <div className="teamA">
+                                <img
+                                    className="club-logo"
+                                    src={`img/logo/${
+                                        teamsArray.teamLogo[match.team_a]
+                                    }.png`}
+                                    alt={teamsArray.teamName[match.team_a]}
+                                />
+                                <div className="teamAName">
+                                    {teamsArray.teamName[match.team_a]}
+                                </div>
+                                <div className="teamScore">
+                                    {match.team_a_score}
+                                </div>
+                            </div>
+                            <div className="teamH">
+                                <img
+                                    className="club-logo"
+                                    src={`img/logo/${
+                                        teamsArray.teamLogo[match.team_h]
+                                    }.png`}
+                                    alt={teamsArray.teamName[match.team_h]}
+                                />
+                                <div className="teamHName">
+                                    {teamsArray.teamName[match.team_h]}
+                                </div>
+                                <div className="teamScore">
+                                    {match.team_h_score}
+                                </div>
+                            </div>
                         </div>
                         <div className="matchTime">{match.kickoff_time}</div>
                     </div>
