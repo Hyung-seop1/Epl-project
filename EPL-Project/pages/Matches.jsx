@@ -98,18 +98,11 @@ export default function Matches() {
                                     {match.team_h_score}
                                 </div>
                             </div>
-                            <div className="matchTime">
-                                {format(
-                                    new Date(match.kickoff_time),
-                                    "EEE, MMM d"
-                                )}
-
-                                <div>
-                                    {format(
-                                        new Date(match.kickoff_time),
-                                        "h:mm a"
-                                    )}
-                                </div>
+                        </div>
+                        <div className="matchTime">
+                            {format(new Date(match.kickoff_time), "EEE, MMM d")}
+                            <div>
+                                {format(new Date(match.kickoff_time), "h:mm a")}
                             </div>
                         </div>
                     </div>

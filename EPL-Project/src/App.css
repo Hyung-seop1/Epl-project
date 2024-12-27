@@ -400,6 +400,8 @@ body {
 
 .matchTable {
     color: #b0b0b0;
+    width: 60%;
+    margin-left: 250px;
 }
 
 .matchTable h2 {
@@ -425,6 +427,14 @@ body {
     border-bottom: 1px solid #b0b0b0;
 }
 
+.eachEvent .matchTime {
+    margin-top: 35px;
+    width: 400px;
+    text-align: center;
+    height: 90%;
+    border-left: 1px solid #b0b0b0;
+}
+
 .eachEvent .teamInfo {
     margin-bottom: 10px;
 }
@@ -438,7 +448,11 @@ body {
 
 .eachEvent .teamInfo .teamA {
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
+}
+
+.eachEvent .teamInfo .teamH {
+    margin-bottom: 30px;
 }
 
 .eachEvent .teamInfo .teamA,
