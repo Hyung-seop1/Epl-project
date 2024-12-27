@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import fixtureData from "../data/fixture.json";
 import informationData from "../data/information.json";
+import format from "date-fns/format";
 
 export default function Matches() {
     // Set as default "1" for match day
@@ -97,8 +98,20 @@ export default function Matches() {
                                     {match.team_h_score}
                                 </div>
                             </div>
+                            <div className="matchTime">
+                                {format(
+                                    new Date(match.kickoff_time),
+                                    "EEE, MMM d"
+                                )}
+
+                                <div>
+                                    {format(
+                                        new Date(match.kickoff_time),
+                                        "h:mm a"
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                        <div className="matchTime">{match.kickoff_time}</div>
                     </div>
                 ))}
             </div>

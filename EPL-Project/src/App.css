@@ -436,6 +436,11 @@ body {
     margin-bottom: 5px;
 }
 
+.eachEvent .teamInfo .teamA {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 .eachEvent .teamInfo .teamA,
 .eachEvent .teamInfo .teamH {
     display: flex;
@@ -450,8 +455,4 @@ body {
 .teamScore {
     width: 150px;
     text-align: center;
-}
-
-.eachEvent .matchTime {
-    margin-left: 30px;
 }
