@@ -3,11 +3,11 @@ export default function Aboutus() {
         <>
             <div className="aboutUs">
                 <div className="aboutme-background">
-                    <img src="img/Winner.jpg.webp" alt="epl" />
+                    <img src="src/img/Winner.jpg.webp" alt="epl" />
                 </div>
                 <div className="introduce">
                     <div className="photo">
-                        <img src="img/me.jpg" className="me"></img>
+                        <img src="src/img/me.jpg" className="me"></img>
                     </div>
                     <div className="content">
                         <h2>About Us</h2>

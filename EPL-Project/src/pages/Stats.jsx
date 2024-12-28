@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import fixtureData from "../data/fixture.json";
-import informationData from "../data/information.json";
+import fixtureData from "../../data/fixture.json";
+import informationData from "../../data/information.json";
 
 export default function Stats() {
     const [playersArray, setPlayersArray] = useState([]);
@@ -138,7 +138,7 @@ export default function Stats() {
                                 <div className="club">
                                     <img
                                         className="club-logo"
-                                        src={`img/logo/${team.logo}.png`}
+                                        src={`src/img/logo/${team.logo}.png`}
                                         alt={team.name}
                                     ></img>
                                     <span>{team.name}</span>
@@ -170,7 +170,7 @@ export default function Stats() {
                                 <div className="club">
                                     <img
                                         className="club-logo"
-                                        src={`img/logo/${team.logo}.png`}
+                                        src={`src/img/logo/${team.logo}.png`}
                                         alt={team.name}
                                     ></img>
                                     <span>{team.name}</span>
@@ -203,7 +203,7 @@ export default function Stats() {
                                 <div className="club">
                                     <img
                                         className="club-logo"
-                                        src={`img/logo/${team.logo}.png`}
+                                        src={`src/img/logo/${team.logo}.png`}
                                         alt={team.name}
                                     ></img>
                                     <span>{team.name}</span>
@@ -235,7 +235,7 @@ export default function Stats() {
                                 <div className="club">
                                     <img
                                         className="club-logo"
-                                        src={`img/logo/${team.logo}.png`}
+                                        src={`src/img/logo/${team.logo}.png`}
                                         alt={team.name}
                                     ></img>
                                     <span>{team.name}</span>

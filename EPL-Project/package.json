@@ -1,12 +1,9 @@
 {
-    "homepage": "https://Hyung-seop1.github.io/Epl-project/",
     "name": "epl-project",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist",
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint .",

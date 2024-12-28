@@ -18,7 +18,7 @@ export default function Home() {
                     <Today />
                 </div>
                 <div className="image">
-                    <img src="img/homeImg.webp" alt="epl" />
+                    <img src="src/img/homeImg.webp" alt="epl" />
                 </div>
             </div>
             <div className="icons">
