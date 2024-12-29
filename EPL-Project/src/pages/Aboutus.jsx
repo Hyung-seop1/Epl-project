@@ -1,13 +1,16 @@
+import winner from "/src/img/Winner.jpg.webp";
+import me from "/src/img/me.jpg";
+
 export default function Aboutus() {
     return (
         <>
             <div className="aboutUs">
                 <div className="aboutme-background">
-                    <img src="src/img/Winner.jpg.webp" alt="epl" />
+                    <img src={winner} alt="epl" />
                 </div>
                 <div className="introduce">
                     <div className="photo">
-                        <img src="src/img/me.jpg" className="me"></img>
+                        <img src={me} className="me"></img>
                     </div>
                     <div className="content">
                         <h2>About Us</h2>

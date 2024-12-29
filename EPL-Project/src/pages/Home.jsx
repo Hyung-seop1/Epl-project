@@ -1,4 +1,5 @@
 import Today from "../component/Today";
+import homeImg from "/src/img/homeImg.webp";
 
 export default function Home() {
     return (
@@ -18,7 +19,7 @@ export default function Home() {
                     <Today />
                 </div>
                 <div className="image">
-                    <img src="src/img/homeImg.webp" alt="epl" />
+                    <img src={homeImg} alt="epl" />
                 </div>
             </div>
             <div className="icons">
