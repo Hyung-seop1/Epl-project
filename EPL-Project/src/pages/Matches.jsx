@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import fixtureData from "../../data/fixture.json";
 import informationData from "../../data/information.json";
 import format from "date-fns/format";
+import logos from "../component/getImg";
 
 export default function Matches() {
     // Set as default "1" for match day
@@ -71,9 +72,9 @@ export default function Matches() {
                             <div className="teamA">
                                 <img
                                     className="club-logo"
-                                    src={`src/img/logo/${
-                                        teamsArray.teamLogo[match.team_a]
-                                    }.png`}
+                                    src={
+                                        logos[teamsArray.teamLogo[match.team_a]]
+                                    }
                                     alt={teamsArray.teamName[match.team_a]}
                                 />
                                 <div className="teamAName">
@@ -86,9 +87,9 @@ export default function Matches() {
                             <div className="teamH">
                                 <img
                                     className="club-logo"
-                                    src={`src/img/logo/${
-                                        teamsArray.teamLogo[match.team_h]
-                                    }.png`}
+                                    src={
+                                        logos[teamsArray.teamLogo[match.team_h]]
+                                    }
                                     alt={teamsArray.teamName[match.team_h]}
                                 />
                                 <div className="teamHName">
