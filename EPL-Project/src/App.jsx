@@ -5,6 +5,7 @@ import Navbar from "../src/pages/Navbar";
 import Home from "../src/pages/Home";
 import Aboutus from "../src/pages/Aboutus";
 import Matches from "../src/pages/Matches";
+import LogIn from "../src/pages/LogIn";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/standings" element={<Standing />} />
                     <Route path="/stats" element={<Stats />} />
                     <Route path="/aboutus" element={<Aboutus />} />
+                    <Route path="/login" element={<LogIn />} />
                 </Routes>
             </div>
         </>

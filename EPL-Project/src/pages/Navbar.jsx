@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import logo from "/src/img/epl_logo.png";
-import logIn from "./LogIn";
 
 export default function Navbar() {
     return (
@@ -63,9 +62,9 @@ export default function Navbar() {
                     </NavLink>
                 </li>
             </ul>
-            <a className="btn" href="/pages/LogIn.jsx">
-                Login
-            </a>
+            <button className="btn">
+                <NavLink to="/login">Login</NavLink>
+            </button>
         </nav>
     );
 }
