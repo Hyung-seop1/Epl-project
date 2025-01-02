@@ -1,3 +1,28 @@
+/**
+ * @file Standing.jsx
+ * @description This file defines the `Standing` component, which displays the current standings for the
+ * English Premier League (EPL). The component visualizes data from fixture and team information,
+ * providing details such as team names, logos, matches played, wins, draws, losses, goals scored and conceded,
+ * goal difference, and points. Users can view the league standings in a tabular format with navigation for
+ * previous and next matchdays.
+ *
+ * Features:
+ * - Displays team standings including position, club name, matches played, wins, draws, losses, goals scored,
+ *   goals conceded, goal difference, and points.
+ * - Visualization of recent match outcomes through icons for Win, Draw, and Loss.
+ * - Sorting teams by points and goal difference.
+ * - Visual indicators for top teams, mid-table teams, and relegation positions.
+ * - Uses data from `fixture.json` and `information.json` to dynamically update team statistics.
+ *
+ * Data Sources:
+ * - `fixture.json`: Contains match fixture information including scores and match statuses.
+ * - `information.json`: Provides team details including IDs, names, short names, and other related information.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ */
+
 import { useEffect, useState } from "react";
 import fixtureData from "../../data/fixture.json";
 import informationData from "../../data/information.json";

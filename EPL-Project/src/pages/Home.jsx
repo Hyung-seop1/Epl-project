@@ -1,3 +1,14 @@
+/**
+ * @file Home.jsx
+ * @description This file defines the `Home` component, which serves as the main landing page for the application.
+ * It displays a welcoming message, a primary home image, social media links, and personal profile links.
+ * The component aims to introduce the website's purpose and provide easy navigation to relevant resources.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ */
+
 import Today from "../component/Today";
 import homeImg from "/src/img/homeImg.webp";
 

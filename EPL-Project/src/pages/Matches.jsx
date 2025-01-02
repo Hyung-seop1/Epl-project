@@ -1,3 +1,25 @@
+/**
+ * @file Matches.jsx
+ * @description This file defines the `Matches` component, which displays match information for the
+ * English Premier League (EPL). The component utilizes fixture data and team information to render
+ * match details, including team names, logos, scores, and kickoff times. Users can navigate through
+ * matchdays using previous and next buttons, with match data grouped by event (matchday).
+ *
+ * Features:
+ * - Displays match details for the current matchday, including team names, logos, scores, and kickoff times.
+ * - Navigation to view previous and next matchdays.
+ * - Uses `useEffect` for data grouping and mapping team IDs to names and logos.
+ * - Utilizes date-fns for formatting kickoff times.
+ *
+ * Data Sources:
+ * - `fixture.json`: Contains fixture information such as matchdays, teams, scores, and kickoff times.
+ * - `information.json`: Contains team details, including IDs, names, and short names for mapping logos.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ */
+
 import { useEffect, useState } from "react";
 import fixtureData from "../../data/fixture.json";
 import informationData from "../../data/information.json";

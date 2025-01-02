@@ -1,3 +1,17 @@
+/**
+ * @file getImg.jsx
+ * @description This file imports logo images for various teams and organizes them into an object for easy access.
+ * The `logos` object is exported as the default export for use in other parts of the application.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ * Usage:
+ * Import this file wherever team logos are needed:
+ * import logos from './logos';
+ * Access a specific logo using its key: example => logos['ARS'];
+ */
+
 import logo1 from "/src/img/logo/ARS.png";
 import logo2 from "/src/img/logo/AVL.png";
 import logo3 from "/src/img/logo/BHA.png";

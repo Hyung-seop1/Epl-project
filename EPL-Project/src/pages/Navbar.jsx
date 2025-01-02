@@ -1,3 +1,23 @@
+/**
+ * @file Navbar.jsx
+ * @description This file defines the `Navbar` component, which serves as the navigation menu for the application.
+ * It provides a consistent navigation experience across different pages using React Router's `NavLink` component.
+ * The component includes links to various sections such as Home, Matches, Standings, Stats, and About Us,
+ * along with a button to navigate to the login page.
+ *
+ * Features:
+ * - Navigation links for Home, Matches, Standings, Stats, and About Us.
+ * - Active link styling using conditional class application.
+ * - Login button for navigating to the login page.
+ *
+ * Data Handling:
+ * - Uses `NavLink` to manage navigation between different routes.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ */
+
 import { NavLink } from "react-router-dom";
 import logo from "/src/img/epl_logo.png";
 

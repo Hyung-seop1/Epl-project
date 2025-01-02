@@ -1,3 +1,15 @@
+/**
+ * @file Aboutus.jsx
+ * @description This file defines the `Aboutus` component, which provides an overview of the purpose
+ * and motivation behind the creation of this application. The component displays
+ * an image background, a personal photo, a detailed description, and links to the developer's LinkedIn
+ * and GitHub profiles for more information.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ */
+
 import winner from "/src/img/Winner.jpg.webp";
 import me from "/src/img/me.jpg";
 

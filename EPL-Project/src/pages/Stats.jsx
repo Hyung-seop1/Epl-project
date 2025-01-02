@@ -1,3 +1,25 @@
+/**
+ * @file Stats.jsx
+ * @description This file defines the `Stats` component, which displays player performance statistics
+ * for the English Premier League (EPL). The component visualizes data related to player
+ * goals, assists, yellow cards, and red cards. It provides a detailed view of top-performing players
+ * in various aspects of the game, showcasing club affiliation and statistics.
+ *
+ * Features:
+ * - Displays player statistics including goals, assists, yellow cards, and red cards.
+ * - Sorting players by performance in each category (goals, assists, yellow/red cards).
+ * - Visualization of player contributions and disciplinary actions.
+ * - Utilizes data from `fixture.json` and `information.json` to dynamically update player statistics.
+ *
+ * Data Sources:
+ * - `fixture.json`: Contains match fixture information and player statistics for goals, assists, and cards.
+ * - `information.json`: Provides details of players and teams including IDs, names, short names, and team affiliations.
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.2.2025
+ *
+ */
+
 import { useEffect, useState } from "react";
 import fixtureData from "../../data/fixture.json";
 import informationData from "../../data/information.json";
