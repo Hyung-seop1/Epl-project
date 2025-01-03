@@ -549,17 +549,23 @@ h1 {
     background-color: #1e40af;
 }
 
-.login .linkToSignUp {
+.login .linkTo .signup {
+    color: #1e40af;
+    font-weight: 700;
+    background-color: #1c1c1c;
+    margin-top: 0px;
+    margin-left: 0;
+    width: 30%;
+    text-decoration: underline;
+}
+
+.login .linkTo {
     margin-top: 20px;
     display: flex;
     gap: 10px;
     color: #fff;
     font-size: smaller;
-}
-
-.signup {
-    color: #1e40af;
-    font-weight: 700;
+    align-items: center;
 }
 
 .error {

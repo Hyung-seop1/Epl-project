@@ -1,28 +1,9 @@
-/**
- * @file LogIn.jsx
- * @description This file defines the `LogIn` component, which prompts the user to enter their email
- * and password. The component uses React's `useState` to manage form input values and validation errors.
- * It verifies the validity of the input fields (email format and password length). If the input is invalid,
- * the user is prevented from navigating to the main page ("/"). Upon successful validation, the user is
- * redirected to the main page using React Router's `useNavigate`.
- *
- * Features:
- * - Email validation (required and proper format)
- * - Password validation (required and minimum length of 6 characters)
- * - Error messages for invalid input
- * - Redirection to the main page on successful login
- *
- * @author Hyung-seop Lee
- * @date Jan.2.2025
- *
- */
-
 import logos from "../component/getImg";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../component/UserContext";
 
-export default function logIn() {
+export default function signIn() {
     const { setUserEmail } = useContext(UserContext); // Access context
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -62,13 +43,13 @@ export default function logIn() {
 
         if (isValid) {
             setUserEmail(email);
-            navigate("/");
+            navigate("/login");
         }
     };
 
     const navToSignUp = (e) => {
         // Navigate to Sign Up page
-        navigate("/signup");
+        navigate("/login");
     };
 
     return (
@@ -78,7 +59,7 @@ export default function logIn() {
                     <img src={logos.TOT}></img>
                 </div>
                 <div className="login">
-                    <h1>Login</h1>
+                    <h1>Sign Up</h1>
                     <div className="text">
                         <label htmlFor="email"> </label>
                         <input
@@ -102,12 +83,24 @@ export default function logIn() {
                         {passwordError && (
                             <p className="error">{passwordError}</p>
                         )}
+                        <label htmlFor="password"> </label>
+                        <input
+                            type="password"
+                            className="password"
+                            name="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={handlePasswordChange}
+                        />
+                        {passwordError && (
+                            <p className="error">{passwordError}</p>
+                        )}
                     </div>
-                    <button onClick={handleLogin}>Login to your account</button>
+                    <button onClick={handleLogin}>Create an account</button>
                     <div className="linkTo">
-                        <p>Don't have an account?</p>
+                        <p>Already have an account?</p>
                         <button className="signup" onClick={navToSignUp}>
-                            Sign Up
+                            LogIn
                         </button>
                     </div>
                 </div>
