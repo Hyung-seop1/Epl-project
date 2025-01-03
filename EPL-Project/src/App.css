@@ -78,7 +78,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.btn {
+.btn,
+.displayEmail {
     padding: 1rem 2rem;
     font-size: 1rem;
     background-color: #1d4ed8;
@@ -87,11 +88,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.btn a {
+.btn a,
+.displayEmail a {
     color: #fff;
 }
 
-.btn:hover {
+.btn:hover,
+.displayEmail:hover {
     background-color: #1e40af;
 }
 

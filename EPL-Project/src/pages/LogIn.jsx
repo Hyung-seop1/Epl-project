@@ -21,10 +21,12 @@
  */
 
 import logos from "../component/getImg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../component/UserContext";
 
 export default function logIn() {
+    const { setUserEmail } = useContext(UserContext); // Access context
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("");
@@ -62,6 +64,7 @@ export default function logIn() {
         }
 
         if (isValid) {
+            setUserEmail(email);
             navigate("/");
         }
     };

@@ -20,8 +20,12 @@
 
 import { NavLink } from "react-router-dom";
 import logo from "/src/img/epl_logo.png";
+import { useContext } from "react";
+import { UserContext } from "../component/UserContext";
 
 export default function Navbar() {
+    const { userEmail } = useContext(UserContext); // Access user email
+
     return (
         <nav className="navBar">
             <div className="nav-logo">
@@ -82,9 +86,15 @@ export default function Navbar() {
                     </NavLink>
                 </li>
             </ul>
-            <button className="btn">
-                <NavLink to="/login">Login</NavLink>
-            </button>
+            <div className="user-info">
+                {userEmail ? (
+                    <span className="displayEmail"> {userEmail}</span>
+                ) : (
+                    <button className="btn">
+                        <NavLink to="/login">Login</NavLink>
+                    </button>
+                )}
+            </div>
         </nav>
     );
 }
