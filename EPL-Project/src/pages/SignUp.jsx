@@ -1,14 +1,35 @@
+/**
+ * @file SignUp.jsx
+ * @description This file defines the `SignUp` component, which prompts the user to enter their email
+ * and password. The component uses React's `useState` to manage form input values and validation errors.
+ * It verifies the validity of the input fields (email format and password length). If the input is invalid,
+ * the user is prevented from navigating to the login page ("/login"). Upon successful validation, the user is
+ * redirected to the login page using React Router's `useNavigate`.
+ *
+ * Features:
+ * - Email validation (required and proper format)
+ * - Password validation (required and minimum length of 6 characters)
+ * - Error messages for invalid input
+ * - Redirection to the login page on successful sign-up
+ *
+ * @author Hyung-seop Lee
+ * @date Jan.3.2025
+ *
+ */
+
 import logos from "../component/getImg";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../component/UserContext";
 
 export default function signIn() {
-    const { setUserEmail } = useContext(UserContext); // Access context
+    const { setSignUpEmail, setSignUpPassword } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordConfirm, setPasswordConfirm] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [confirmError, setConfirmError] = useState("");
     const navigate = useNavigate();
 
     const handleEmailChange = (e) => {
@@ -17,6 +38,10 @@ export default function signIn() {
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
+    };
+
+    const confirmPassword = (e) => {
+        setPasswordConfirm(e.target.value);
     };
 
     const handleLogin = (e) => {
@@ -41,8 +66,15 @@ export default function signIn() {
             isValid = false;
         }
 
+        // Confirming for password
+        if (password != passwordConfirm) {
+            setConfirmError("The passwords do not match. Please try again.");
+            isValid = false;
+        }
+
         if (isValid) {
-            setUserEmail(email);
+            setSignUpEmail(email);
+            setSignUpPassword(passwordConfirm);
             navigate("/login");
         }
     };
@@ -83,17 +115,17 @@ export default function signIn() {
                         {passwordError && (
                             <p className="error">{passwordError}</p>
                         )}
-                        <label htmlFor="password"> </label>
+                        <label htmlFor="passwordcnf"> </label>
                         <input
                             type="password"
                             className="password"
-                            name="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={handlePasswordChange}
+                            name="passwordcnf"
+                            placeholder="Repeat Password"
+                            value={passwordConfirm}
+                            onChange={confirmPassword}
                         />
-                        {passwordError && (
-                            <p className="error">{passwordError}</p>
+                        {confirmError && (
+                            <p className="error">{confirmError}</p>
                         )}
                     </div>
                     <button onClick={handleLogin}>Create an account</button>

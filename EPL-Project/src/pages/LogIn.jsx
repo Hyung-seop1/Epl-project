@@ -10,10 +10,11 @@
  * - Email validation (required and proper format)
  * - Password validation (required and minimum length of 6 characters)
  * - Error messages for invalid input
+ * - Authentication using context to check and validate user credentials
  * - Redirection to the main page on successful login
  *
  * @author Hyung-seop Lee
- * @date Jan.2.2025
+ * @date Jan.3.2025
  *
  */
 
@@ -24,6 +25,8 @@ import { UserContext } from "../component/UserContext";
 
 export default function logIn() {
     const { setUserEmail } = useContext(UserContext); // Access context
+    const { signUpEmail } = useContext(UserContext);
+    const { signUpPassword } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("");
@@ -50,6 +53,11 @@ export default function logIn() {
         } else if (!emailFormat.test(email)) {
             setEmailError("Please enter a valid email address.");
             isValid = false;
+        } else if (email != signUpEmail) {
+            setEmailError(
+                "Email not found. Please sign up or check your email address"
+            );
+            isValid = false;
         }
 
         // Verification for password
@@ -58,7 +66,12 @@ export default function logIn() {
         } else if (password.length < 6) {
             setPasswordError("Password must be at least 6 characters long.");
             isValid = false;
+        } else if (password != signUpPassword) {
+            setPasswordError("Incorrect password. Please try again.");
+            isValid = false;
         }
+
+        console.log(signUpPassword);
 
         if (isValid) {
             setUserEmail(email);
