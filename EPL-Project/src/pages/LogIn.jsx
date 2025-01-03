@@ -12,9 +12,6 @@
  * - Error messages for invalid input
  * - Redirection to the main page on successful login
  *
- * Challenge:
- * - Implement displaying the user's email when login is successful (maybe using context API...)
- *
  * @author Hyung-seop Lee
  * @date Jan.2.2025
  *
